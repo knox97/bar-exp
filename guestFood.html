@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html ng-app="guestOrderPage">
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">-->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/bs/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/css/serviceHome.css">
+        <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="css/bs/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/angular.min.js"></script>
+        <style type="text/css">
+            [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+                display: none !important;
+            }
+            p {
+                font-size: 20px;
+            }
+            .btn-save-menu {
+    position: fixed;
+    opacity: 1;
+    bottom: 16px;
+    left: 16px;
+}
+.btn-save-wrap {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #696;
+    opacity: 1;
+    height: 75px;
+    width: 100%;
+}
+.order {
+    padding-bottom: 65px;
+}
+.totalCost, .totalCost:hover, .totalCost:visited, .totalCost:active {
+                position: fixed;
+                bottom: 16px;
+                right: 16px;
+                background: transparent !important;
+                text-shadow: 1px 1px 1px #000;
+                border: none !important;
+            }
+        </style>
+        <title>BarExp</title>
+    </head>
+    <body>
+        <!--  -->
+        <div class="content" ng-controller="data">
+            <h1 class="header"></h1>
+            <div class="btn-save-wrap"></div>
+            <button class="btn btn-primary btn-lg btn-save-menu" onclick="javascript: getBill();">Get Bill</button>
+            <button class="btn btn-primary btn-lg totalCost">TOTAL: $0</button>
+            
+                
+            <div id="menuList" class="order">
+                <!-- Food Item template
+                <div class="foodItem">
+                    <h4 class="title">Pizza</h4>
+                    <p class="desc">cheese, tomatos, vegan, seeds, cream</p>
+                    <p class="price">$35.00</p>
+                </div>
+                -->
+                
+            </div>
+        </div>
+        
+
+
+
+
+
+        <div class="error-message"></div>
+        <div class="success-message"></div>
+
+
+        <script type="text/javascript" src="js/outputMsg.js"></script>
+        <script type="text/javascript" src="js/settings.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/ctrl/guestFood.js"></script>
+        <script>
+            
+            //$('h1').text('jQuery works');
+        </script>
+    </body>
+</html>

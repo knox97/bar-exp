@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html ng-app="setMenuPage">
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">-->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/bs/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/css/findPlace.css">
+        <link rel="stylesheet" type="text/css" href="css/css/setMenu.css">
+        <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="css/bs/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/angular.min.js"></script>
+        <style type="text/css">
+            [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+                display: none !important;
+            }
+        </style>
+        <title>BarExp</title>
+    </head>
+    <body>
+
+
+        <!-- PAGE CONTENT -->
+        <div class="content" ng-controller="data">
+            <!-- Creates offset for content so its not covered by navbar -->
+            <script type="text/javascript" src="js/navbar.js"></script>
+            <button class="btn btn-primary btn-lg btn-block" onclick="javascript: $('#itemTitle').val(''); $('#itemDesc').val(''); $('#itemPrice').val(''); logInfo(''); $('#addBtn').show(); $('#saveBtn').hide(); $('#deleteBtn').hide();">Add Food</button>
+            <div class="btn-save-wrap"></div>
+            <button class="btn btn-primary btn-lg btn-save-menu" onclick="javascript: finished();">Done</button>
+            <!-- Food items, will be dynamically populated from $scope, this is a template -->
+            
+            <div id="menuList">
+                <!-- Food Item template
+                <div class="foodItem">
+                    <h4 class="title">Pizza</h4>
+                    <p class="desc">cheese, tomatos, vegan, seeds, cream</p>
+                    <p class="price">$35.00</p>
+                </div>
+                -->
+
+                
+            </div>            
+        </div>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <div class="info-message">
+            <h3>Add Item<span class="glyphicon glyphicon-remove-circle" onclick="javascript: closeInfo(); setTimeout(function() {$('#addBtn').hide(); $('#saveBtn').hide(); $('#deleteBtn').hide();}, 1000)"></span></h3>
+            <div>
+            </div>
+            <h4>Food Name</h4>
+            <input type="text" id="itemTitle" placeholder="Whats the food name" maxlength="35" />
+            <h4>Description</h4>
+            <textarea rows="3" id="itemDesc" placeholder="Describe the food" maxlength="90"></textarea>
+            <h4>Price</h4>
+            <input type="text" id="itemPrice" placeholder="How much does it cost" maxlength="35" />
+            <button id="addBtn" class="btn btn-primary btn-lg" onclick="javascript: validateData()">Add</button>
+            <button id="saveBtn" class="btn btn-primary btn-lg" onclick="javascript: saveMenuItem();">Save</button>
+            <button id="deleteBtn" class="btn btn-primary btn-lg" onclick="javascript: deleteMenuItem();">Delete</button>
+        </div>
+        <div class="error-message"></div>
+        <div class="success-message"></div>
+        <!-- Adds offset to the bottom for Save button -->
+
+
+        <script type="text/javascript" src="js/outputMsg.js"></script>
+        <script type="text/javascript" src="js/settings.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/ctrl/setMenu.js"></script>
+        <script>
+            loadMenu();
+            function finished() {
+                window.location.href = 'serviceHome.html';
+            }
+            $('.btn-save-menu').css('visibility', 'visible');
+            $('.btn-save-menu').css('opacity', '1');
+            $('.btn-save-wrap').css('visibility', 'visible');
+            $('.btn-save-wrap').css('opacity', '1');
+            $('.btn-save-wrap').css('height', '75px');
+            $('#menuList').css('padding-bottom', '75px');
+        </script>
+    </body>
+</html>

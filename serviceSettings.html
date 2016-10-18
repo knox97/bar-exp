@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html ng-app="setMenuPage">
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">-->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/bs/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/css/findPlace.css">
+        <link rel="stylesheet" type="text/css" href="css/css/setMenu.css">
+        <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="css/bs/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/angular.min.js"></script>
+        <style type="text/css">
+            [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+                display: none !important;
+            }
+        </style>
+        <title>BarExp</title>
+    </head>
+    <body>
+
+
+        <!-- PAGE CONTENT -->
+        <div class="content" ng-controller="data">
+            <!-- Creates offset for content so its not covered by navbar -->
+            <h1 class="header">Access Settings</h1>
+            <h3>Admin Password <span class="glyphicon glyphicon-question-sign" style="float:right;" id="gpwInfo"></span></h3>
+            <input type="text" name="pw" id="apw" placeholder="Type guest password" />
+            <button class="btn btn-lg btn-primary" onclick="javascript: accessSettings()">Access</button>
+            <!-- Food items, will be dynamically populated from $scope, this is a template -->
+            
+            <div id="menuList">
+                <!-- Food Item template
+                <div class="foodItem">
+                    <h4 class="title">Pizza</h4>
+                    <p class="desc">cheese, tomatos, vegan, seeds, cream</p>
+                    <p class="price">$35.00</p>
+                </div>
+                -->
+
+                
+            </div>            
+        </div>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+        <div class="error-message"></div>
+        <div class="success-message"></div>
+        <!-- Adds offset to the bottom for Save button -->
+
+
+        <script type="text/javascript" src="js/outputMsg.js"></script>
+        <script type="text/javascript" src="js/settings.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/ctrl/setMenu.js"></script>
+        <script>
+            var username = window.localStorage.getItem('user');
+            var nav = window.localStorage.getItem('nav');
+
+            function finished() {
+                // when Done button is pressed redirect to the serviceHome
+            }
+
+            function accessSettings() {
+                var apw = $('#apw').val();
+                var isInvalid = false;
+
+                if (apw.length == 0) {
+                    $('#apw').css('border', '1px solid red');
+                    isInvalid = true;
+                }
+                else
+                    $('#apw').css('border', '1px solid #252525');
+
+                if (isInvalid)
+                    logError('Invalid form');
+
+                if (!isInvalid) {
+                    var url = `http://localhost:3535/accessSettings?username=${username}&apw=${apw}`;
+
+                    $.ajax({
+                        type: 'GET',
+                        url: url,
+                        dataType: 'jsonp',
+                        success: function(data) {
+                            if (data.status == 'SUCCESS') {
+                                logSuccess('Access granted, wait a second');
+                                if (nav == 'menu')
+                                    setTimeout(function() {window.location.href = 'setMenu.html';}, 700);
+                                if (nav == 'info')
+                                    setTimeout(function() {window.location.href = 'setInfo.html';}, 700);
+                                if (nav == 'curr')
+                                    setTimeout(function() {window.location.href = 'setCurr.html';}, 700);
+                            }
+                            else if (data.status == 'WRONG') {
+                                logError('Wrong password');
+                            }
+                            else
+                                logError('Something went wrong');
+                        },
+                        error: function(err) {
+                            console.log(err);
+                        }
+                    });
+                }
+            }
+        </script>
+    </body>
+</html>

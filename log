@@ -1,0 +1,44 @@
+ * Login/Register					[DONE: SUCCESS]
+ * Find place						[DONE: SUCCESS]
+ * Guest Login						[DONE: SUCCESS]
+ * Home page						[DONE: SUCCESS]
+ * Set Currency and apw/gpw			[DONE: SUCCESS]
+ * Set Information					[DONE: SUCCESS]
+ * Set Menu							[DONE: SUCCESS]
+ * Guest/Service					[DONE: SUCCESS]
+ * Service home page				[DONE: SUCCESS]
+ * Call to order page				[DONE: SUCCESS]
+ * Confirm order page				[DONE: SUCCESS]
+ * Get bill page					[DONE: SUCCESS]
+ * Confirm bill page				[DONE: SUCCESS]
+ * Rate the place page				[DONE: SUCCESS]
+ * add init pages without navbar	[DONE: SUCCESS]
+ * Remove after rating				[DONE: SUCCESS]
+
+TODO:
+ * load users in findPlace.html and onclick someFunc(this.id) to set user item in storage
+
+# NOTES
+
+{name: guest1, state: ORDERED, order: [obj, obj, obj]}
+
+state by default "WAITING"
+
+the important thing is for guest and service to have username stored
+
+when reloading call only one API and then with the data return
+make a switch statement if "WAITING" add to waiting to order list
+if "ORDERED" add to waiting for food if "SERVED" add to paying
+
+when user trys to get what he ordered api checks state if its equal to "ORDERED" then it redirects
+to ordered
+
+when user presses get bill it denies if state is not "SERVED" and status gets set to it once bartender
+pressed the Served button on the Waiting For Food window
+
+and can confirm bill only once state is "PAID"
+once user confirms the guest object is deleted
+
+theres an array of guest numbers that are taken
+when creating guest start count from zero and then check if theres that number in array
+if not create a guest and add that number to the array
