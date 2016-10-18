@@ -1,5 +1,6 @@
 # Bar-Exp
 ##Bar/Restaraunt App for guest/service communication
+###Made with Apache Cordova you can just copy the entier project and paste it in `www` folder of your cordova app
 ![Loading screen](https://s13.postimg.org/6axfsoz9z/Workspace_1_039.png)
 ![Home](https://s13.postimg.org/v5gxmrk47/Workspace_1_040.png)
 ![Photo](https://s13.postimg.org/qkur7u0ev/Workspace_1_041.png)
