@@ -1,0 +1,14 @@
+.nav {
+  font-size: 26px; }
+
+.menu-cont {
+  background: rgba(0, 0, 5, 0.35);
+  padding: 10px; }
+
+a {
+  color: inherit;
+  font-weight: bold; }
+  a:hover {
+    color: inherit; }
+
+/*# sourceMappingURL=serviceLogin.css.map */

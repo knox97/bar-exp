@@ -1,0 +1,52 @@
+.btn-save-menu {
+  position: fixed;
+  opacity: 0;
+  bottom: 16px;
+  left: 16px; }
+
+.btn-save-wrap {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #696;
+  opacity: 0;
+  height: 35px;
+  width: 100%; }
+
+#menuList {
+  margin-top: 16px;
+  /* margin-bottom will be set dynamically save btn height + 16px (padding around btn) */ }
+
+.foodItem {
+  width: 100%;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 8px;
+  background: rgba(35, 35, 35, 0.75);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.35); }
+  .foodItem:hover {
+    cursor: pointer;
+    opacity: 0.9; }
+  .foodItem:nth-child(even) {
+    background: rgba(45, 45, 45, 0.75); }
+  .foodItem:last-child {
+    border: none; }
+  .foodItem p {
+    margin: 0; }
+  .foodItem .title {
+    font-weight: bold;
+    margin: 4px 0; }
+  .foodItem .desc {
+    font-size: 14px; }
+  .foodItem .price {
+    font-weight: bold;
+    color: #EEE;
+    overflow: hidden !important;
+    width: 100%;
+    text-align: right; }
+
+.info-message {
+  background: #696;
+  padding: 10px; }
+
+/*# sourceMappingURL=setMenu.css.map */

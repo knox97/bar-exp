@@ -1,0 +1,187 @@
+a {
+  text-decoration: none;
+  color: inherit; }
+  a:hover, a:active, a:visited {
+    text-decoration: none;
+    color: inherit; }
+
+body {
+  -webkit-touch-callout: none;
+  -webkit-text-size-adjust: none;
+  -webkit-user-select: none;
+  background-color: #696;
+  background-attachment: fixed;
+  font-family: "HelveticaNeue-Light", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  text-shadow: 1px 1px 0px #000;
+  color: #FFF;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  width: 100%; }
+
+.header {
+  text-align: center;
+  margin: 0 0 15px 0;
+  font-weight: bold;
+  padding: 0; }
+
+.content {
+  margin: 0;
+  padding: 16px; }
+
+.lang {
+  background: rgba(35, 35, 40, 0.35);
+  padding: 0;
+  margin: 0 0 5px 0;
+  cursor: pointer;
+  border: 1px solid #454545;
+  height: 64px; }
+  .lang div {
+    margin: 0;
+    padding: 0; }
+
+.flag-img {
+  height: 64px;
+  border: 1px solid #454545;
+  width: 100%;
+  margin: 0;
+  padding: 0; }
+
+.flag-txt {
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-weight: bold;
+  line-height: 64px; }
+
+input, textarea, select, option {
+  background: rgba(35, 35, 40, 0.75);
+  border: 1px solid #252525;
+  width: 100%;
+  padding: 10px;
+  margin: 0 0 10px 0;
+  text-shadow: 1px 1px 0px #000 !important;
+  font-size: 16px;
+  resize: none; }
+
+h3 {
+  margin: 5px 0; }
+
+.btn {
+  background: rgba(0, 0, 5, 0.35);
+  color: #FFF;
+  border-radius: 0;
+  border: 1px solid #555; }
+  .btn:hover, .btn:active, .btn:visited {
+    background: rgba(0, 0, 5, 0.35) !important; }
+
+small {
+  color: #DDD !important; }
+
+.error-message {
+  padding: 10px;
+  background: rgba(35, 35, 40, 0.75);
+  border-bottom: 2px solid red;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-size: 20px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.1s linear; }
+
+.success-message {
+  padding: 10px;
+  background: rgba(35, 35, 40, 0.75);
+  border-bottom: 2px solid #0D0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-size: 20px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.1s linear; }
+
+.info-message {
+  padding: 0;
+  background: rgba(35, 35, 40, 0.75);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.1s linear; }
+  .info-message h3 {
+    font-size: 30px;
+    padding: 10px;
+    background: #696;
+    margin: 0; }
+    .info-message h3 span {
+      float: right;
+      cursor: pointer;
+      color: #EEE; }
+  .info-message div {
+    padding: 10px;
+    margin: 0; }
+
+li {
+  padding: 10px;
+  font-size: 20px; }
+  li a {
+    text-weight: bold; }
+
+.nav-page {
+  color: #FFF !important;
+  padding: 26px !important;
+  font-size: 26px; }
+
+.nav li {
+  padding: 0px;
+  font-size: 20px; }
+  .nav li a {
+    text-weight: bold; }
+  .nav li .active {
+    color: #252525 !important; }
+    .nav li .active a {
+      color: #252525 !important; }
+
+.navbar {
+  background: #474;
+  color: #FFF !important;
+  border-bottom: 1px solid rgba(35, 35, 40, 0.75); }
+
+.navbar-toggle {
+  font-size: 25px;
+  padding: 5px 10px 2px 10px;
+  border: none;
+  background: #252; }
+  .navbar-toggle:active, .navbar-toggle:visited, .navbar-toggle:hover {
+    background: #252 !important; }
+  .navbar-toggle span {
+    padding: 0;
+    margin: 0; }
+
+.nopad {
+  margin: 0;
+  padding: 0; }
+
+span {
+  cursor: pointer; }
+
+.user {
+  background: rgba(35, 35, 40, 0.75);
+  padding: 8px; }
+  .user:nth-child(even) {
+    background: rgba(45, 45, 45, 0.75); }
+  .user p {
+    margin: 0;
+    padding: 0; }
+
+/*# sourceMappingURL=main.css.map */

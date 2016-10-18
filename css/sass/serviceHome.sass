@@ -1,0 +1,128 @@
+$bg_color: rgba(35, 35, 35, 0.75)
+$bg_color2: rgba(45, 45, 45, 0.75)
+$pad: 8px
+$border_color: rgba(0,0,0,0.35)
+$bg_bg: #696
+
+.guest
+	width: 100%
+	font-size: 16px
+	cursor: pointer
+	padding: $pad
+	background: $bg_color
+	border-bottom: 2px solid $border_color
+	&:hover
+		cursor: pointer
+		opacity: 0.9
+	&:nth-child(even)
+		background: $bg_color2
+	&:last-child
+		border: none
+	p
+		margin: 0
+	.title
+		font-weight: bold
+		margin: 4px 0
+	
+#menuList
+	margin-top: 16px
+	/* margin-bottom will be set dynamically save btn height + 16px (padding around btn) */
+
+.foodItem
+	width: 100%
+	font-size: 16px
+	cursor: pointer
+	padding: $pad
+	background: $bg_color
+	border-bottom: 2px solid $border_color
+	&:nth-child(even)
+		background: $bg_color2
+	&:last-child
+		border: none
+	p
+		margin: 0
+	.title
+		font-weight: bold
+		margin: 4px 0
+	.desc
+		font-size: 14px
+	.price
+		font-weight: bold
+		color: #EEE
+		overflow: hidden !important
+		width: 100%
+		text-align: right
+
+#order, #food
+	padding: 0
+
+#addFoodGuest
+	background: $bg_bg
+	position: fixed
+	padding: $pad
+	top: 0
+	left: 0
+	width: 100%
+	visibility: hidden
+	height: 100%
+	overflow-y: auto
+	.head
+		font-size: 30px
+
+#addFoodGuestItem
+	background: $bg_bg
+	position: fixed
+	padding: $pad
+	top: 0
+	left: 0
+	width: 100%
+	visibility: hidden
+	height: 100%
+	overflow-y: auto
+	.head
+		font-size: 30px
+
+#guestFood
+	background: $bg_bg
+	position: fixed
+	padding: $pad
+	top: 0
+	left: 0
+	width: 100%
+	visibility: hidden
+	height: 100%
+	overflow-y: auto
+	.head
+		font-size: 30px
+
+#guestBill
+	background: $bg_bg
+	position: fixed
+	padding: $pad
+	top: 0
+	left: 0
+	width: 100%
+	visibility: hidden
+	height: 100%
+	overflow-y: auto
+	.head
+		font-size: 30px
+
+.btn-save-menu
+	position: fixed
+	opacity: 0
+	bottom: 16px
+	left: 16px
+
+.btn-save-wrap
+	position: fixed
+	bottom: 0
+	left: 0
+	background: $bg_bg
+	opacity: 0
+	height: 35px
+	width: 100%
+
+
+
+
